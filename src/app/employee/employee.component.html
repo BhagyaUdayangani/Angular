@@ -1,0 +1,27 @@
+<div class="list row">
+  <div class="col-md-6">
+    <h4>Employee List</h4>
+  </div>
+  <div class="col-md-6">
+    <table mat-table class="mat-elevation-z8">
+      <tr>
+        <th>Employee Id</th>
+        <th>Employee Name</th>
+        <th>Employee Salary</th>
+        <th>Employee Age</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+      <tr *ngFor="let currentEmployee of employees">
+        <td>{{ currentEmployee.id }}</td>
+        <td>{{ currentEmployee.employee_name }}</td>
+        <td>{{ currentEmployee.employee_salary }}</td>
+        <td>{{ currentEmployee.employee_age }}</td>
+        <td><a routerLink="update" class="nav-link">Edit</a></td>
+        <td><a class="badge badge-warning" href="/delete/{{ currentEmployee.id }}">
+          Delete
+        </a></td>
+      </tr>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="main"></div>
+<div class="card-container">
+    <mat-card class="card">
+        <table>
+            <tr>
+                <h2>Search Employee</h2>
+            </tr>
+            <tr class="md-form active-cyan active-cyan-2 mb-3">
+                <label for="search1">Enter Employee Id: </label>
+                <input class="form-control" type="search" #search id="search" name="search" aria-label="Search" mdbInput>
+                <button type="submit" (onClick)="getEmployee(search.value)">Search</button>
+            </tr>
+            <tr *ngFor="let currentEmployee of employees">
+                <td>{{ currentEmployee.id }}</td>
+                <td>{{ currentEmployee.employee_name }}</td>
+                <td>{{ currentEmployee.employee_salary }}</td>
+                <td>{{ currentEmployee.employee_age }}</td>
+            </tr>
+        </table>
+    </mat-card>
+</div>
